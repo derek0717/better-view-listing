@@ -8,7 +8,7 @@ async function fromjapan() {
     /****************/
     /* style toggle */
     var timer;
-    const initialTimeout = (89999+parseInt(Math.random()*1000-500));
+    const initialTimeout = (69999+parseInt(Math.random()*1000-500));
     const cycleTimeout = 13999;
     const div = document.createElement('div');
 

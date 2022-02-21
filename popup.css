@@ -1,8 +1,9 @@
 body{
     margin: 0;
-    padding: 0;
+    padding: 5px;
+    background-color: #eaeaea;
 }
 
 #text{
-    padding: 5px;
+    font-weight: bold;
 }

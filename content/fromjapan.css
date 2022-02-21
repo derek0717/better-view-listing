@@ -56,11 +56,39 @@
     padding-right: 6px !important;
     border-bottom: 0 !important;
     margin-bottom: 0 !important;
+    position: relative!important;
 }
 
-.d #app .item-box {
+.d #app .search-main .item-box {
     margin-bottom: 0 !important;
-    border: 1px solid #f5f5f5 !important;
+    border: 1px solid #e7e7e7 !important;
+}
+.d #app .item-box + div>a{
+    white-space: inherit!important;
+    height: 39px!important;
+    overflow: hidden!important;
+    margin-bottom: 10px!important;
+}
+.d #app .item-box + div>div{
+    position: absolute;
+    top: 135px;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 5px!important;
+    border-radius: 0 15px 15px 0;
+}
+.d #app .item-box + div>div>a{
+    max-height: 0 !important;
+    overflow: hidden !important;
+}
+.d #app .item-box + div>div>div p,
+.d #app .item-box + div>div>div span{
+    color:#fff!important;
+}
+.d #app .item-box + div>div>div p::before{
+    content: '¥';
+}
+.d #app .item-box + div>div>div p span:last-child{
+    display: none!important;
 }
 
 .d #app #fj_bnr_camp {
@@ -89,6 +117,9 @@
         transform: scaleX(0);
     }
     1% {
+        transform: scaleX(0.98);
+    }
+    2% {
         transform: scaleX(1);
     }
     100% {
