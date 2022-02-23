@@ -1,6 +1,3 @@
-.d body{
-    color:#000!important;
-}
 .d #app #header {
     max-height: 0 !important;
     overflow: hidden !important;
@@ -66,6 +63,7 @@
     position: relative!important;
     padding-left:0!important;
     padding-right:0!important;
+    flex-direction: column!important;
 }
 
 .d #app .search-main .item-box {
@@ -75,16 +73,22 @@
     border-radius: 5px!important;
     overflow: hidden!important;
     background: #f0f0f0;
+    width:100% !important;
 }
 .d #app .search-main .item-box img{
     max-height:200px!important;
 }
 
+.d #app .item-box + div{
+    width: 100% !important;
+    padding-left:0!important;
+}
 .d #app .item-box + div>a{
     white-space: inherit!important;
     height: 39px!important;
     overflow: hidden!important;
     margin-bottom: 10px!important;
+    color:#000!important;
 }
 .d #app .item-box + div>div{
     position: absolute;
