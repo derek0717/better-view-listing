@@ -1,7 +1,7 @@
 {
   "name": "Better View Listing",
   "description": "Compact view, auto refresh",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"

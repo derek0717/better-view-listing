@@ -1,5 +1,5 @@
 async function fromjapan() {
-    console.log('┣ Start script');
+    console.log('┣ Start fromjapan script');
 
     let items = await chrome.storage.local.get(['fromjapan_view', 'fromjapan_refresh']);
     let isView = items['fromjapan_view'] || false;
@@ -116,6 +116,6 @@ async function fromjapan() {
         timer = setTimeout(refreshItem, initialTimeout);
     }
 
-    console.log('┗ End script');
+    console.log('┗ End fromjapan script');
 }
 fromjapan();

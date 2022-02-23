@@ -1,5 +1,5 @@
 async function mercari(){
-    console.log('┣ Start script');
+    console.log('┣ Start mercari script');
 
     let items = await chrome.storage.local.get(['mercari_view', 'mercari_refresh']);
     let isView = items['mercari_view'] || false;
@@ -105,8 +105,8 @@ async function mercari(){
             console.log('Auto refresh stopped');
         }else if(checkbox2.checked){
             if(timer)clearTimeout(timer);
-            const memNow = window.performance.memory.usedJSHeapSize;
-            if(memNow>200000000){
+            const memNow = window.performance?.memory?.usedJSHeapSize || null;
+            if(memNow && memNow>(window.performance.memory.jsHeapSizeLimit/5)){
                 console.log('Memory:',bytesToSize(memNow),'; Reloading page..');
                 location.reload();
             } else {
@@ -115,7 +115,7 @@ async function mercari(){
                     document.querySelector("mer-search-input").shadowRoot.querySelector(".for-search mer-icon-button").click();
                 }
                 reflowLine(next);
-                console.log(document.hidden?'Hidden;':'','Memory:'+bytesToSize(memNow)+';','Next refresh', next+'ms');
+                console.log(document.hidden?'Hidden;':'','Memory:'+bytesToSize(memNow)+'/'+bytesToSize(window.performance.memory.jsHeapSizeLimit/5)+';','Next refresh', next+'ms');
                 timer=setTimeout(refreshItem, next);
             }
         }else{
@@ -154,6 +154,6 @@ async function mercari(){
     // script.src='https://rawgit.com/paulirish/memory-stats.js/master/bookmarklet.js';
     // document.head.appendChild(script);
 
-    console.log('┗ End script');
+    console.log('┗ End mercari script');
 }
 mercari();

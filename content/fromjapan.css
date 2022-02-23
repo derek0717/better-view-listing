@@ -31,9 +31,9 @@
 }
 
 .d #app .contents .search-main .vx-card__body {
-    padding-top: 0 !important;
-    padding-left: 5px !important;
-    padding-right: 5px !important;
+    padding-top: 5px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .d #app .search-head {
@@ -52,17 +52,26 @@
 
 .d #app .search-main .shop-item {
     width: 200px !important;
-    padding-left: 6px !important;
-    padding-right: 6px !important;
+    margin-left: 4px !important;
+    margin-right: 4px !important;
     border-bottom: 0 !important;
     margin-bottom: 0 !important;
     position: relative!important;
+    padding-left:0!important;
+    padding-right:0!important;
 }
 
 .d #app .search-main .item-box {
     margin-bottom: 0 !important;
     border: 1px solid #e7e7e7 !important;
+    height: 200px!important;
+    border-radius: 5px!important;
+    overflow: hidden!important;
 }
+.d #app .search-main .item-box img{
+    max-height:200px!important;
+}
+
 .d #app .item-box + div>a{
     white-space: inherit!important;
     height: 39px!important;
