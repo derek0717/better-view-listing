@@ -82,10 +82,15 @@ async function fromjapan() {
     }
     document.getElementsByTagName('body')[0].appendChild(line);
 
-    function reflowLine(ms){
+    function reflowLine(ms, isRefresh = true){
         line.style.animation = 'none';
-        line.offsetHeight; /* trigger reflow */
+        line.offsetHeight;
         line.style.animation = 'dCountDown '+(ms)+'ms linear';
+        if(isRefresh){
+            line.classList.remove('reload-provisioning');
+        }else{
+            line.classList.add('reload-provisioning');
+        }
     }
     function bytesToSize(bytes) {
         var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
@@ -101,9 +106,10 @@ async function fromjapan() {
             const next = (cycleTimeout+parseInt(Math.random()*1000-500));
             if(!document.hidden){
                 console.log('Memory:',bytesToSize(memNow),'; Reloading page..');
+                reflowLine(next, true);
                 location.reload();
             } else {
-                reflowLine(next);
+                reflowLine(next, false);
                 console.log(document.hidden?'Hidden;':'','Memory:'+bytesToSize(memNow)+';','Next refresh', next+'ms');
                 timer=setTimeout(refreshItem, next);
             }

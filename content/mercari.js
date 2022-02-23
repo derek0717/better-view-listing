@@ -87,10 +87,15 @@ async function mercari(){
     }
     document.getElementsByTagName('body')[0].appendChild(line);
 
-    function reflowLine(ms){
+    function reflowLine(ms, isRefresh = true){
         line.style.animation = 'none';
         line.offsetHeight;
         line.style.animation = 'dCountDown '+(ms)+'ms linear';
+        if(isRefresh){
+            line.classList.remove('reload-provisioning');
+        }else{
+            line.classList.add('reload-provisioning');
+        }
     }
     function bytesToSize(bytes) {
         var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
@@ -113,8 +118,10 @@ async function mercari(){
                 const next = (cycleTimeout+parseInt(Math.random()*1000-500));
                 if(!document.hidden){
                     document.querySelector("mer-search-input").shadowRoot.querySelector(".for-search mer-icon-button").click();
+                    reflowLine(next, true);
+                } else {
+                    reflowLine(next, false);
                 }
-                reflowLine(next);
                 console.log(document.hidden?'Hidden;':'','Memory:'+bytesToSize(memNow)+'/'+bytesToSize(window.performance.memory.jsHeapSizeLimit/5)+';','Next refresh', next+'ms');
                 timer=setTimeout(refreshItem, next);
             }

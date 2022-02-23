@@ -1,3 +1,6 @@
+.d body{
+    color:#000!important;
+}
 .d #app #header {
     max-height: 0 !important;
     overflow: hidden !important;
@@ -30,10 +33,14 @@
     margin-bottom: 0 !important;
 }
 
+.d #app .contents .search-main {
+    margin-bottom: 0 !important;
+}
 .d #app .contents .search-main .vx-card__body {
     padding-top: 5px !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    background: #e5e5e5!important;
 }
 
 .d #app .search-head {
@@ -63,10 +70,11 @@
 
 .d #app .search-main .item-box {
     margin-bottom: 0 !important;
-    border: 1px solid #e7e7e7 !important;
+    /*border: 1px solid #e7e7e7 !important;*/
     height: 200px!important;
     border-radius: 5px!important;
     overflow: hidden!important;
+    background: #f0f0f0;
 }
 .d #app .search-main .item-box img{
     max-height:200px!important;
@@ -113,6 +121,7 @@
 .d #app .search-main + div {
     max-height: 0 !important;
     overflow: hidden !important;
+    margin-bottom: 0!important;
 }
 
 .d #app .toolbox{
@@ -194,4 +203,7 @@
     transform: scaleX(0);
     transform-origin: left center;
     opacity: 0.9;
+}
+.dLine.reload-provisioning{
+    background: #f28000e6;
 }
