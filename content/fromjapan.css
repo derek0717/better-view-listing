@@ -39,7 +39,9 @@
     padding-right: 0 !important;
     background: #e5e5e5!important;
 }
-
+.d #app .contents .search-main .vx-card__body>div.overflow-hidden{
+    overflow: visible!important;
+}
 .d #app .search-head {
     max-height: 0 !important;
     overflow: hidden !important;
@@ -56,8 +58,8 @@
 
 .d #app .search-main .shop-item {
     width: 200px !important;
-    margin-left: 4px !important;
-    margin-right: 4px !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
     border-bottom: 0 !important;
     margin-bottom: 0 !important;
     position: relative!important;
@@ -74,6 +76,12 @@
     overflow: hidden!important;
     background: #f0f0f0;
     width:100% !important;
+    transition: transform 0.2s ease-out;
+    transform-origin: 50% 20%;
+}
+.d #app .search-main .item-box:hover {
+    transform: scale(2);
+    z-index: 1;
 }
 .d #app .search-main .item-box img{
     max-height:200px!important;
