@@ -136,7 +136,7 @@ async function mercari(){
 
     function overrideItemClick(){
         controller = new AbortController();
-        var grid = document.getElementById('item-grid');
+        var grid = document.getElementsByTagName('body')[0];
         // var grid = document.getElementsByTagName('body')[0];
         if(grid){
             grid.addEventListener('click', (event) => {

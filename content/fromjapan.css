@@ -72,16 +72,9 @@
     margin-bottom: 0 !important;
     /*border: 1px solid #e7e7e7 !important;*/
     height: 200px!important;
-    border-radius: 5px!important;
     overflow: hidden!important;
     background: #f0f0f0;
     width:100% !important;
-    transition: transform 0.2s ease-out;
-    transform-origin: 50% 20%;
-}
-.d #app .search-main .item-box:hover {
-    transform: scale(2);
-    z-index: 1;
 }
 .d #app .search-main .item-box img{
     max-height:200px!important;
