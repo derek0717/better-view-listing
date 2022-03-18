@@ -130,7 +130,8 @@
     margin-bottom: 0!important;
 }
 
-.d #app .toolbox{
+.d #app .toolbox,
+.d #app .lightbox.z-50000{
     max-height: 0 !important;
     overflow: hidden !important;
     padding: 0 !important;
