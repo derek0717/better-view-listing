@@ -1,4 +1,5 @@
-.d mer-heading {
+.d mer-heading,
+.d mer-heading + mer-text{
     margin-bottom: 0 !important;
     max-height: 0 !important;
     overflow: hidden !important;
@@ -42,7 +43,7 @@
     padding-right: 5px !important;
 }
 
-.d #item-grid {
+.d #item-grid>ul {
     display: flex !important;
     flex-wrap: wrap !important;
     grid-gap: 15px 10px !important;
