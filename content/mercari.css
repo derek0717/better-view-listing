@@ -78,6 +78,18 @@
     height: 50px !important;
 }
 
+.d #item-grid > mer-separator,
+.d #item-grid > section {
+    max-height: 0 !important;
+    overflow: hidden !important;
+}
+
+.d [class*='FloatingButton__FloatingContainer'],
+.d [class*='NavBar__StyledNavigationBottom']{
+    max-height: 0 !important;
+    overflow: hidden !important;
+}
+
 .d [data-testid='item-cell'] {
     position: relative !important;
 }
