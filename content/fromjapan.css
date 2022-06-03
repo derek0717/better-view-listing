@@ -214,3 +214,19 @@
 .dLine.reload-provisioning{
     background: #f28000e6;
 }
+/* 4Jun */
+.d #app .contents .hidden.w-full.lg\:w-1\/4.mb-base {
+    width:0!important;
+    overflow:hidden;
+}
+.d #app .contents .flex.lg\:w-3\/4.items-start {
+    width: 98%!important;
+}
+.d #app .contents > div:nth-child(1){
+    height:0px;
+    overflow: hidden;
+}
+.d #app [class^="karte-widget"]{
+    height: 0px!important;
+    overflow: hidden;
+}
