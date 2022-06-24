@@ -144,7 +144,7 @@
 .d #app .contents .flex.lg\:w-3\/4.items-start {
     width: 100%!important;
 }
-.d #app .contents > div:nth-child(1){
+.d #app .contents > div:nth-child(1) > div > div:nth-child(1){
     height:0px;
     overflow: hidden;
 }
