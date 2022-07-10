@@ -137,7 +137,6 @@
     padding: 0 !important;
 }
 
-/* 4Jun */
 .d #app .contents .hidden.w-full.lg\:w-1\/4.mb-base {
     display: none!important;
 }
@@ -156,9 +155,13 @@
     overflow: hidden;
     margin-bottom: 0!important;
 }
-.d #app [class^="karte-widget"]{
+.d #app [class^="karte-"],
+.d #app [class^="karte-"] *{
     height: 0px!important;
     overflow: hidden;
+}
+.d #app #karate-c{
+    display: none;
 }
 
 @keyframes dCountDown {
