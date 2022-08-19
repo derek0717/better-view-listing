@@ -8,7 +8,7 @@ async function fromjapan() {
     /****************/
     /* style toggle */
     var timer;
-    const initialTimeout = (69999+parseInt(Math.random()*1000-500));
+    const initialTimeout = (69999 + parseInt(Math.random() * 1000 - 500));
     const cycleTimeout = 13999;
     const div = document.createElement('div');
 
@@ -16,14 +16,14 @@ async function fromjapan() {
     label.classList.add("dToggle");
     label.classList.add("dYellow");
     var checkbox = document.createElement("input");
-    checkbox.type='checkbox';
-    checkbox.style.display='none';
+    checkbox.type = 'checkbox';
+    checkbox.style.display = 'none';
 
-    if(isView){
-        checkbox.checked='checked';
+    if (isView) {
+        checkbox.checked = 'checked';
         document.querySelector('body').classList.add("d");
     }
-    checkbox.addEventListener('change', async(event) => {
+    checkbox.addEventListener('change', async (event) => {
         if (event.currentTarget.checked) {
             document.querySelector('body').classList.add("d");
             let fromjapan_view = true;
@@ -33,7 +33,8 @@ async function fromjapan() {
             document.querySelector('body').classList.remove("d");
             let fromjapan_view = false;
             window.dispatchEvent(new Event('resize'));
-            await chrome.storage.local.set({fromjapan_view},function(){});
+            await chrome.storage.local.set({fromjapan_view}, function () {
+            });
         }
     })
     label.appendChild(checkbox);
@@ -45,15 +46,15 @@ async function fromjapan() {
     label2.classList.add("dToggle");
     label2.classList.add("dRed");
     var checkbox2 = document.createElement("input");
-    checkbox2.type='checkbox';
-    checkbox2.style.display='none';
+    checkbox2.type = 'checkbox';
+    checkbox2.style.display = 'none';
 
-    if(isRefresh){
-        checkbox2.checked='checked';
+    if (isRefresh) {
+        checkbox2.checked = 'checked';
     }
 
     var line = document.createElement('div');
-    checkbox2.addEventListener('change', async(event) => {
+    checkbox2.addEventListener('change', async (event) => {
         if (event.currentTarget.checked) {
             let fromjapan_refresh = true;
             await chrome.storage.local.set({fromjapan_refresh});
@@ -77,21 +78,22 @@ async function fromjapan() {
     /* auto refresh */
     line.classList.add('dLine');
 
-    if(isRefresh) {
+    if (isRefresh) {
         line.style.animation = 'dCountDown ' + initialTimeout + 'ms linear';
     }
     document.getElementsByTagName('body')[0].appendChild(line);
 
-    function reflowLine(ms, isRefresh = true){
+    function reflowLine(ms, isRefresh = true) {
         line.style.animation = 'none';
         line.offsetHeight;
-        line.style.animation = 'dCountDown '+(ms)+'ms linear';
-        if(isRefresh){
+        line.style.animation = 'dCountDown ' + (ms) + 'ms linear';
+        if (isRefresh) {
             line.classList.remove('reload-provisioning');
-        }else{
+        } else {
             line.classList.add('reload-provisioning');
         }
     }
+
     function bytesToSize(bytes) {
         var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
         if (bytes == 0) return '0 Byte';
@@ -99,28 +101,42 @@ async function fromjapan() {
         return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
     }
 
-    function refreshItem(){
-        if(checkbox2.checked){
-            if(timer)clearTimeout(timer);
+    function refreshItem() {
+        if (checkbox2.checked) {
+            if (timer) clearTimeout(timer);
             const memNow = window.performance.memory.usedJSHeapSize;
-            const next = (cycleTimeout+parseInt(Math.random()*1000-500));
-            if(!document.hidden){
-                console.log('Memory:',bytesToSize(memNow),'; Reloading page..');
+            const next = (cycleTimeout + parseInt(Math.random() * 1000 - 500));
+            if (!document.hidden) {
+                console.log('Memory:', bytesToSize(memNow), '; Reloading page..');
                 reflowLine(next, true);
                 location.reload();
             } else {
                 reflowLine(next, false);
-                console.log(document.hidden?'Hidden;':'','Memory:'+bytesToSize(memNow)+';','Next refresh', next+'ms');
-                timer=setTimeout(refreshItem, next);
+                console.log(document.hidden ? 'Hidden;' : '', 'Memory:' + bytesToSize(memNow) + ';', 'Next refresh', next + 'ms');
+                timer = setTimeout(refreshItem, next);
             }
-        }else{
+        } else {
             console.log('Auto refresh stopped');
         }
     }
 
-    if(isRefresh) {
+    if (isRefresh) {
         timer = setTimeout(refreshItem, initialTimeout);
     }
+
+    function keyPressListener() {
+        document.addEventListener('keydown', function (e) {
+            switch (e.keyCode) {
+                case 37:
+                    document.querySelector(".prev").firstChild.click()
+                    break;
+                case 39:
+                    document.querySelector(".next").firstChild.click()
+                    break;
+            }
+        });
+    }
+    keyPressListener();
 
     console.log('┗ End fromjapan script');
 }
