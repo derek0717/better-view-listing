@@ -164,6 +164,18 @@
     display: none;
 }
 
+.d #app .header-wrap,
+.d #app .leading-none{
+    max-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+.d #app .search-bar {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+}
 @keyframes dCountDown {
     0% {
         transform: scaleX(0);
