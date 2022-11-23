@@ -35,6 +35,10 @@
     border-top: 0;
     border-bottom: 0;
 }
+.d [class*='CrossBorderBanner'] {
+    max-height: 0 !important;
+    overflow: hidden !important;
+}
 
 .d #main {
     padding-top: 1px !important;
