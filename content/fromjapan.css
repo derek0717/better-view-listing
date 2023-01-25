@@ -177,11 +177,6 @@
     padding: 0 !important;
 }
 
-.d [data-testid="item-grid-skeleton"]{
-    max-height: 200px!important;
-    overflow: hidden!important;
-}
-
 @keyframes dCountDown {
     0% {
         transform: scaleX(0);
