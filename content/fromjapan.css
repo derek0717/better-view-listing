@@ -88,7 +88,7 @@
     white-space: inherit!important;
     height: 39px!important;
     overflow: hidden!important;
-    margin-bottom: 10px!important;
+    margin-bottom: 7px!important;
     color:#000!important;
 }
 .d #app .item-box + div>div{
@@ -176,6 +176,12 @@
     overflow: hidden !important;
     padding: 0 !important;
 }
+
+.d [data-testid="item-grid-skeleton"]{
+    max-height: 200px!important;
+    overflow: hidden!important;
+}
+
 @keyframes dCountDown {
     0% {
         transform: scaleX(0);
