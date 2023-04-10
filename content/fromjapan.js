@@ -8,7 +8,8 @@ async function fromjapan() {
     /****************/
     /* style toggle */
     var timer;
-    const initialTimeout = (69999 + parseInt(Math.random() * 1000 - 500));
+    const isMercari = (!!window.location.href.indexOf('mercari')) || false;
+    const initialTimeout = ((isMercari?24999:69999) + parseInt(Math.random() * 1000 - 500));
     const cycleTimeout = 13999;
     const div = document.createElement('div');
 
