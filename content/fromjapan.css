@@ -177,6 +177,12 @@
     padding: 0 !important;
 }
 
+.d #app .fj-sale-label {
+    max-height: 0!important;
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+
 @keyframes dCountDown {
     0% {
         transform: scaleX(0);
