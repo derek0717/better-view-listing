@@ -1,7 +1,7 @@
 {
   "name": "Better View Listing",
   "description": "Compact view, auto refresh",
-  "version": "0.2.19",
+  "version": "0.3.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -29,12 +29,16 @@
       "css" : ["content/mercari.css"]
     },
     {
-      "matches": ["https://www.fromjapan.co.jp/tw/rakuma/search*",
-        "https://www.fromjapan.co.jp/japan/tw/mercari/search*",
-        "https://www.fromjapan.co.jp/tw/rakuma/category*",
-        "https://www.fromjapan.co.jp/japan/tw/rakuma/search*"],
+      "matches": ["https://www.fromjapan.co.jp/japan/tw/rakuma/search*",
+                  "https://www.fromjapan.co.jp/tw/rakuma/category*",
+                  "https://www.fromjapan.co.jp/japan/tw/mercari/search*",
+                  "https://www.fromjapan.co.jp/japan/tw/mercari/category*"],
       "js": ["content/fromjapan.js"],
       "css" : ["content/fromjapan.css"]
+    },
+    {
+      "matches": ["https://www.tcgmp.jp/*product*"],
+      "js": ["content/tcgmp.js"]
     }
   ]
 }
