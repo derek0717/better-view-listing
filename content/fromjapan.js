@@ -8,7 +8,7 @@ async function fromjapan() {
     /****************/
     /* style toggle */
     var timer;
-    const isMercari = (!!window.location.href.indexOf('mercari')) || false;
+    const isMercari = (window.location.href.indexOf('mercari')>-1) || false;
     const initialTimeout = ((isMercari?24999:69999) + parseInt(Math.random() * 1000 - 500));
     const cycleTimeout = 13999;
     const div = document.createElement('div');
@@ -73,6 +73,7 @@ async function fromjapan() {
     label2.appendChild(span2);
     div.appendChild(label2);
     div.classList.add('dControl');
+    div.style.background=isMercari?"#780f0f":"#203b9c";
     document.getElementsByTagName('body')[0].appendChild(div);
 
     /****************/
