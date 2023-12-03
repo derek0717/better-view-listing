@@ -72,8 +72,8 @@ async function fromjapan() {
     span2.appendChild(document.createTextNode("↻"));
     label2.appendChild(span2);
     div.appendChild(label2);
-    div.classList.add('dControl');
-    div.style.background=isMercari?"#780f0f":"#203b9c";
+    div.classList.add(isMercari?'dControl-Mercari':'dControl-Rakuma');
+    // div.style.background=isMercari?"#780f0f":"#203b9c";
     document.getElementsByTagName('body')[0].appendChild(div);
 
     /****************/

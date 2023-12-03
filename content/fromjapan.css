@@ -107,9 +107,9 @@
 .d #app .item-box + div>div>div span{
     color:#fff!important;
 }
-.d #app .item-box + div>div>div p::before{
-    content: '¥';
-}
+/*.d #app .item-box + div>div>div p::before{*/
+/*    content: '¥';*/
+/*}*/
 .d #app .item-box + div>div>div p span:last-child{
     display: none!important;
 }
@@ -234,15 +234,33 @@
     background: rgb(220 198 43);
 }
 
-.dControl {
+.dControl-Mercari,
+.dControl-Rakuma{
     position: fixed;
     right: 0;
     top: 70px;
     z-index: 100002;
     opacity: 0.9;
-    padding: 3px;
+    padding: 3px 10px 3px 3px;
     background: rgb(42 42 42);
     border-radius: 5px 0 0 5px;
+}
+.dControl-Mercari::before,
+.dControl-Rakuma::before{
+    content:'';
+    display: block;
+    position:absolute;
+    height:100%;
+    width:4px;
+    top:0;
+    right: 0;
+    line-height: 0;
+}
+.dControl-Mercari::before{
+    background-color: #e73131;
+}
+.dControl-Rakuma::before{
+    background-color: #2c56e7;
 }
 
 .dLine {
